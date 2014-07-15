@@ -31,12 +31,10 @@ from openerp.osv import orm, fields
 class res_partner(orm.Model):
     _inherit = 'res.partner'
     _columns = {
-        'payment_type_customer': fields.property(
-            'payment.type', type='many2one', relation='payment.type',
+        'payment_type_customer': fields.property(type='many2one', relation='payment.type',
             string='Customer Payment Type', method=True, view_load=True,
             help="Payment type of the customer"),
-        'payment_type_supplier': fields.property(
-            'payment.type', type='many2one', relation='payment.type',
+        'payment_type_supplier': fields.property(type='many2one', relation='payment.type',
             string='Supplier Payment Type', method=True, view_load=True,
             help="Payment type of the supplier"),
     }
